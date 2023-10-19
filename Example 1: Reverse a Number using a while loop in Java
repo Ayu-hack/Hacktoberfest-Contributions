@@ -19,3 +19,4 @@ class Main {
     System.out.println("Reversed Number: " + reversed);
   }
 }
+}
