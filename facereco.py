@@ -16,9 +16,9 @@ def TakeImages():
         cv2.imshow('frame', img)
         key = cv2.waitKey(1) & 0xFF
 
-        if key == ord('q'):  
+        if key == ord('q'):  #press q key to exit 
             break
-        elif key == ord('c'):  
+        elif key == ord('c'):  #press c to click 
             sampleNum += 1
             img_name = f"camimages/{sampleNum}.jpg"#folder path to sav image it should to be in same as your file in 
             cv2.imwrite(img_name, img)
