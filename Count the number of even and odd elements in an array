@@ -1,0 +1,20 @@
+##Count the number of even and odd elements in an array
+
+
+def CountingEvenOdd(arr, arr_size): 
+	even = 0
+	odd= 0
+	for i in range(arr_size): 
+		if (arr[i] & 1 == 1): 
+			odd += 1
+		else: 
+			even += 1
+
+	print("Number of even elements = ", even) 
+	print("Number of odd elements = ", odd) 
+
+
+
+arr = [2, 3, 4, 5, 6] 
+n = len(arr) 
+CountingEvenOdd(arr, n) 
