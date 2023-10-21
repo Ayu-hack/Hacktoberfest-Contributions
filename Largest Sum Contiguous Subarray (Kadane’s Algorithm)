@@ -1,0 +1,23 @@
+##Largest Sum Contiguous Subarray (Kadane’s Algorithm)
+
+from sys import maxint
+ 
+def maxSubArraySum(a, size):
+ 
+    max = -maxint - 1
+    maxhere = 0
+ 
+    for i in range(0, size):
+        maxhere = maxhere + a[i]
+        if (max < maxhere):
+            max = maxhere
+ 
+        if maxhere < 0:
+            maxhere = 0
+    return max
+
+ 
+ 
+a = [-2, -3, 4, -1, -2, 1, 5, -3]
+ 
+print "Maximum contiguous sum is", maxSubArraySum(a, len(a))
