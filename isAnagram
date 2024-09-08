@@ -1,0 +1,45 @@
+import java.util.*;
+
+public class Solution {
+
+
+    static boolean isAnagram(String a, String b) {
+        // Complete the function
+        if(a.length()!=b.length()){
+            System.out.print("Not Anagram");
+        }
+        // converting to lowercase to compare
+        a=a.toLowerCase();
+        b=b.toLowerCase();
+
+        // converting  to array so that we can compare
+        char[] chArr1 =a.toCharArray();
+        char[] chArr2 = b.toCharArray();
+
+        // sorting the array to make it simplify
+        Arrays.sort(chArr1);
+        Arrays.sort(chArr2);
+
+        // therefore if sorted array matches then its a anagram otherwise it is not
+        Boolean result = Arrays.equals(chArr1,chArr2);
+
+        if(result){
+            System.out.print("Anagram");
+        }
+        else{
+            System.out.print("Not Anagram");
+        }
+
+        return true;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+        String a = scan.next();
+        String b = scan.next();
+        scan.close();
+        boolean ret = isAnagram(a, b);
+
+    }
+}
