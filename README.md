@@ -1,4 +1,4 @@
-## Hacktoberfest 2023: Contribute to Open Source with Confidence (Maintained by Ayush Tiwari)
+## Hacktoberfest 2024: Contribute to Open Source with Confidence (Maintained by Ayush Tiwari)
 
 **Welcome developers!** This repository, maintained by Ayush Tiwari, provides a platform for you to contribute to open source projects and participate in Hacktoberfest 2023. We offer a diverse range of issues across Python and Java, catering to various skill levels. 
 
@@ -33,4 +33,5 @@ Together, let's contribute to a more vibrant and accessible open source ecosyste
 
 * #hacktoberfest2022
 * #hacktoberfest2023
+* #hacktoberfest2024
 
