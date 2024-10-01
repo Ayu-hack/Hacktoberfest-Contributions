@@ -1,0 +1,45 @@
+import java.util.*;
+
+public class Main {
+
+  public static void main(String[] args) {
+   
+
+	int[] coins = {1,2,5};
+	int amount = 11;
+
+	// output: 3
+	// Explanation : 11 = 5 + 5 + 1
+
+	System.out.println(coinChange(coins,amount));
+	}
+
+	 static long[][] dp = new long[13][10002];
+    public static int coinChange(int[] coins, int amount) {
+        
+        for(long[] a:dp){
+            Arrays.fill(a,-1);
+        }
+        int n = coins.length;
+        long ans = solve(coins,amount,n,dp);
+        if(ans == Integer.MAX_VALUE)return -1;
+        return (int)ans;
+        
+    }
+    static long solve(int[] arr,int sum,int n,long[][] dp){
+        if(sum==0){
+        
+            return 0;
+        }
+        if(n==0){
+            return Integer.MAX_VALUE;
+        }
+        if(dp[n-1][sum]!=-1){
+            return dp[n-1][sum];
+        }
+        if(arr[n-1]<=sum){
+            return dp[n-1][sum]=Math.min(solve(arr,sum,n-1,dp),1+solve(arr,sum-arr[n-1],n,dp));
+        }
+        else return dp[n-1][sum]=solve(arr,sum,n-1,dp);
+    }
+  }
