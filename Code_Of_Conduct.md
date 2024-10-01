@@ -2,7 +2,7 @@
 
 ## Welcome
 
-Welcome to the **Ayu-Hack** repository! This project is dedicated to helping beginners contribute to open source, especially during Hacktoberfest. We welcome all pull requests in Python and Java, prioritize genuine contributions, and encourage good first issues. Our community is committed to fostering a respectful, inclusive, and harassment-free environment for all participants, whether they're new to open source or seasoned contributors. Let's work together to create a positive experience for all contributors during Hacktoberfest 2022, 2023, and 2024.
+Welcome to the **Ayu-Hack** repository! This project is dedicated to helping beginners contribute to open source, especially during Hacktoberfest. We welcome all pull requests in Python and Java, prioritize genuine contributions, and encourage good first issues. Our community is committed to fostering a respectful, inclusive, and harassment-free environment for all participants, whether they're new to open source or seasoned contributors. Let's work together to create a positive experience for all contributors during Hacktoberfest 2024.
 
 ## Our Pledge
 
