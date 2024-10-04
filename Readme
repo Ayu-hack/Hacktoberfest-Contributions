@@ -1,0 +1,53 @@
+Convert a List of objects into a Map by considering duplicated keys and store them in sorted order using stream functions.
+Example -
+List noteLst = new ArrayList<>();
+noteLst.add(new Notes(1, "note1", 11));
+noteLst.add(new Notes(2, "note2", 22));
+noteLst.add(new Notes(3, "note3", 33));
+noteLst.add(new Notes(4, "note4", 44));
+noteLst.add(new Notes(5, "note5", 55));
+noteLst.add(newNotes(6, "note4",66));
+
+Output -
+{note1=11, note2=22, note3=33, note4=44, note5=55}
+
+Use Case :
+Suppose you are having a lists of objects where there are atleast 10 properties(there can be more number of properties at the industry level project) 
+(here I have taken only 3 properties - id, tagName, tagId) and you want to perform the operations only on 2 fields using map, 
+then by using stream functions we can do that. Additionally, it is also storing the duplicate keys (as note4 is also storing the values as 66 and 44). 
+If you will be use the reversed() function then you will get the below output.
+Output - Notes : {note4=66, note5=55, note3=33, note2=22, note1=11}
+
+What this code is doing?
+
+1. Convert to Stream: noteLst.stream()
+Purpose : The List is converted to a stream using stream(), allowing us to perform a series of operations on the elements of the list, such as sorting and collecting.
+
+2. Sorting by Tag ID in Descending Order: .sorted(Comparator.comparingLong(Notes::getTagId).reversed())
+Purpose: The sorted() method sorts the list based on the tagId of each Notes object. The comparator (Comparator.comparingLong(Notes::getTagId)) is used to compare the tagId values, and .reversed() ensures the sort is in descending order.
+
+Outcome: After sorting, the Notes with the highest tagId will appear first.
+
+Example Sorted Order:
+Notes(5, "note5", 55)
+Notes(4, "note4", 44)
+Notes(3, "note3", 33)
+Notes(2, "note2", 22)
+Notes(1, "note1", 11)
+Notes(6, "note4", 66) // This will come after "note4" with tagId 44
+
+3. Collecting the Stream into a Map: .collect(Collectors.toMap(Notes::getTagName, Notes::getTagId,
+(oldValue, newValue) -> oldValue,
+LinkedHashMap::new));
+Purpose: The collect() method is used to accumulate the results of the stream operations into a Map.
+Mapping Logic:
+
+Notes::getTagName: The tagName property of each Notes object will be used as the key in the map.
+Notes::getTagId: The tagId property will be used as the value in the map.
+Handling Duplicate Keys:
+
+When there are duplicate tagName values (as in the case of "note4"), the code resolves the conflict by specifying:
+(oldValue, newValue) -> oldValue)
+This means that for a duplicate key (same tagName), the old value is retained, and the new value is discarded. In this case, since "note4" appears twice, only the first occurrence (with tagId=44) will be stored in the map, and the second occurrence (with tagId=66) will be ignored.
+LinkedHashMap: The LinkedHashMap::new ensures that the map maintains the insertion order. So, the elements will appear in the map in the same order as they appear in the sorted list.
+
