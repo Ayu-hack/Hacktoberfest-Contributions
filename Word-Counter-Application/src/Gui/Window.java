@@ -52,7 +52,7 @@ public class Window extends JFrame {
 
     private void addGuiComponents() {
         // set the logo
-        ImageIcon icon = new ImageIcon("src\\Assets\\computer.png");
+        ImageIcon icon = new ImageIcon(getClass().getResource("/Assets/computer.png"));
         Image img = icon.getImage();
         Image scaledImg = img.getScaledInstance(400, 400, java.awt.Image.SCALE_SMOOTH); // Adjust width and height of the image
         icon = new ImageIcon(scaledImg);
