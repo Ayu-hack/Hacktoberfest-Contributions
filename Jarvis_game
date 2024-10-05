@@ -1,0 +1,78 @@
+import random
+import time
+
+def jarvis_intro():
+    print("Hello, I am Jarvis, your personal assistant.")
+    print("What can I do for you today?\n")
+    print("1. Math Calculations")
+    print("2. Tell a Random Fact")
+    print("3. Play a Guessing Game")
+    print("4. Exit\n")
+
+def math_calculations():
+    print("You can ask me to perform simple math operations (e.g., add, subtract, multiply, divide).")
+    operation = input("What operation would you like to perform? (add, subtract, multiply, divide): ").lower()
+    num1 = float(input("Enter the first number: "))
+    num2 = float(input("Enter the second number: "))
+    
+    if operation == "add":
+        print(f"The result of {num1} + {num2} is {num1 + num2}\n")
+    elif operation == "subtract":
+        print(f"The result of {num1} - {num2} is {num1 - num2}\n")
+    elif operation == "multiply":
+        print(f"The result of {num1} * {num2} is {num1 * num2}\n")
+    elif operation == "divide":
+        if num2 != 0:
+            print(f"The result of {num1} / {num2} is {num1 / num2}\n")
+        else:
+            print("Error: Cannot divide by zero!\n")
+    else:
+        print("Invalid operation, please try again.\n")
+
+def tell_random_fact():
+    facts = [
+        "Did you know? Honey never spoils!",
+        "Bananas are berries, but strawberries aren't.",
+        "An octopus has three hearts.",
+        "Wombat poop is cube-shaped.",
+        "A group of flamingos is called a 'flamboyance'."
+    ]
+    print(random.choice(facts) + "\n")
+
+def guessing_game():
+    number = random.randint(1, 100)
+    attempts = 0
+    print("I have selected a number between 1 and 100. Can you guess it?\n")
+    
+    while True:
+        guess = int(input("Enter your guess: "))
+        attempts += 1
+        if guess < number:
+            print("Too low! Try again.")
+        elif guess > number:
+            print("Too high! Try again.")
+        else:
+            print(f"Congratulations! You've guessed the number in {attempts} attempts.\n")
+            break
+
+def jarvis_game():
+    while True:
+        jarvis_intro()
+        choice = input("Enter the number of your choice: ")
+
+        if choice == '1':
+            math_calculations()
+        elif choice == '2':
+            tell_random_fact()
+        elif choice == '3':
+            guessing_game()
+        elif choice == '4':
+            print("Goodbye! Have a great day.")
+            break
+        else:
+            print("Invalid choice. Please try again.\n")
+        time.sleep(1)
+
+# Start the game
+if __name__ == "__main__":
+    jarvis_game()
