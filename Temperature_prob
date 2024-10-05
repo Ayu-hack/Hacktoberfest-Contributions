@@ -1,0 +1,51 @@
+import java.util.Stack;
+
+public class Solution {
+    public int[] dailyTemperatures(int[] temperatures) {
+        int n = temperatures.length;
+        int[] answer = new int[n]; // Result array initialized to all 0s
+        Stack<Integer> stack = new Stack<>(); // Stack to store indices
+
+        for (int i = 0; i < n; i++) {
+            // While stack is not empty and the current temperature is warmer
+            while (!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {
+                int prevIndex = stack.pop(); // Get the index of the colder day
+                answer[prevIndex] = i - prevIndex; // Calculate the number of days to wait
+            }
+            // Push the current day index onto the stack
+            stack.push(i);
+        }
+
+        // No need to explicitly set 0s for the remaining indices in answer, as the array is already initialized to 0.
+
+        return answer;
+    }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+
+        // Example 1
+        int[] temperatures1 = {73, 74, 75, 71, 69, 72, 76, 73};
+        int[] result1 = sol.dailyTemperatures(temperatures1);
+        for (int r : result1) {
+            System.out.print(r + " ");
+        }
+        System.out.println();
+
+        // Example 2
+        int[] temperatures2 = {30, 40, 50, 60};
+        int[] result2 = sol.dailyTemperatures(temperatures2);
+        for (int r : result2) {
+            System.out.print(r + " ");
+        }
+        System.out.println();
+
+        // Example 3
+        int[] temperatures3 = {30, 60, 90};
+        int[] result3 = sol.dailyTemperatures(temperatures3);
+        for (int r : result3) {
+            System.out.print(r + " ");
+        }
+        System.out.println();
+    }
+}
