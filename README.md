@@ -4,7 +4,11 @@
 
 **Connect with me on** [LinkedIn](https://www.linkedin.com/in/ayush-tiwari02)!
 
-**Welcome developers!** This repository, maintained by Ayush Tiwari, provides a platform for you to contribute to open source projects and participate in Hacktoberfest 2023. We offer a diverse range of issues across Python and Java, catering to various skill levels. 
+
+**⭐ Please star this repo as a token of appreciation for the efforts! 🙌**
+
+
+**Welcome developers!** This repository, maintained by Ayush Tiwari, provides a platform for you to contribute to open source projects and participate in Hacktoberfest 2024. We offer a diverse range of issues across Python and Java, catering to various skill levels. 
 
 **Empower Your Open Source Journey:**
 
