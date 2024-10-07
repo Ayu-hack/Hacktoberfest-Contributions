@@ -1,3 +1,7 @@
+## Please consider contributing to this repo: https://github.com/Ayu-hack/Hacktoberfest2024
+## **Sorry for the inconvenience, and thank you for your understanding! 🙏**
+
+
 ## Hacktoberfest 2024: Contribute to Open Source with Confidence (Maintained by Ayush Tiwari)
 
 [![Hacktoberfest 2024](https://img.shields.io/badge/Hacktoberfest-2024-ff6f00?style=flat-square&logo=hacktoberfest&logoColor=white&labelColor=000000)](https://hacktoberfest.digitalocean.com/)
